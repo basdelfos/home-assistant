@@ -113,21 +113,21 @@ class MediaPlayer(HomeAccessory):
             CONF_FEATURE_LIST, get_media_player_features(state)
         )
 
-        if FEATURE_ON_OFF in feature_list:
-            name = self.generate_service_name(FEATURE_ON_OFF)
-            serv_on_off = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
-            serv_on_off.configure_char(CHAR_NAME, value=name)
-            self.chars[FEATURE_ON_OFF] = serv_on_off.configure_char(
-                CHAR_ON, value=False, setter_callback=self.set_on_off
-            )
+        # if FEATURE_ON_OFF in feature_list:
+        #     name = self.generate_service_name(FEATURE_ON_OFF)
+        #     serv_on_off = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
+        #     serv_on_off.configure_char(CHAR_NAME, value=name)
+        #     self.chars[FEATURE_ON_OFF] = serv_on_off.configure_char(
+        #         CHAR_ON, value=False, setter_callback=self.set_on_off
+        #     )
 
-        if FEATURE_PLAY_PAUSE in feature_list:
-            name = self.generate_service_name(FEATURE_PLAY_PAUSE)
-            serv_play_pause = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
-            serv_play_pause.configure_char(CHAR_NAME, value=name)
-            self.chars[FEATURE_PLAY_PAUSE] = serv_play_pause.configure_char(
-                CHAR_ON, value=False, setter_callback=self.set_play_pause
-            )
+        # if FEATURE_PLAY_PAUSE in feature_list:
+        #     name = self.generate_service_name(FEATURE_PLAY_PAUSE)
+        #     serv_play_pause = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
+        #     serv_play_pause.configure_char(CHAR_NAME, value=name)
+        #     self.chars[FEATURE_PLAY_PAUSE] = serv_play_pause.configure_char(
+        #         CHAR_ON, value=False, setter_callback=self.set_play_pause
+        #     )
 
         if FEATURE_PLAY_STOP in feature_list:
             name = self.generate_service_name(FEATURE_PLAY_STOP)
@@ -137,13 +137,13 @@ class MediaPlayer(HomeAccessory):
                 CHAR_ON, value=False, setter_callback=self.set_play_stop
             )
 
-        if FEATURE_TOGGLE_MUTE in feature_list:
-            name = self.generate_service_name(FEATURE_TOGGLE_MUTE)
-            serv_toggle_mute = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
-            serv_toggle_mute.configure_char(CHAR_NAME, value=name)
-            self.chars[FEATURE_TOGGLE_MUTE] = serv_toggle_mute.configure_char(
-                CHAR_ON, value=False, setter_callback=self.set_toggle_mute
-            )
+        # if FEATURE_TOGGLE_MUTE in feature_list:
+        #     name = self.generate_service_name(FEATURE_TOGGLE_MUTE)
+        #     serv_toggle_mute = self.add_preload_service(SERV_SWITCH, CHAR_NAME)
+        #     serv_toggle_mute.configure_char(CHAR_NAME, value=name)
+        #     self.chars[FEATURE_TOGGLE_MUTE] = serv_toggle_mute.configure_char(
+        #         CHAR_ON, value=False, setter_callback=self.set_toggle_mute
+        #     )
         self.update_state(state)
 
     def generate_service_name(self, mode):
